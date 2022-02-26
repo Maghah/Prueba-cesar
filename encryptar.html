@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Encriptar</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+<div class="container">
+<h2>Introducir Password</h2>
+<input type="password" size="25" minlengt="8" />
+<button type="submit" onclick="encriptar(this)">Encriptar</button>
+<button type="submit" onclick="desencriptar(this)">Desencriptar</button>
+
+<p id='resultado'></p>
+
+</div>
+
+<script>
+    function encriptar(elemento){
+        var palabra = document.getElementsByTagName("input")[0].value;
+        var palabra_codificada = btoa(palabra);
+        document.getElementById("resultado").innerHTML = palabra_codificada;
+    }
+     
+    function desencriptar(elemento){
+        var palabra = document.getElementsByTagName("input")[0].value;
+        var palabra_descodificada = atob(palabra);
+        document.getElementById("resultado").innerHTML = palabra_descodificada;
+    }
+    </script>
+</body>
+</html>
